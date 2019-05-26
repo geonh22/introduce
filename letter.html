@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="./letter.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Jua|Sunflower:300');
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:pink;">
+            <a style="color : white; padding-right: 10px; padding-left:10px; ">
+                <i class="far fa-grin-hearts fa-3x" alt="impticon"></i>
+            </a>
+            <a class="navbar-brand" href="#">♥ 건희를 ♥
+                <br> 소개합니다</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#Home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#Info">개인정보</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#Career">학력</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#Photo">갤러리</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#Prefer">건희의 PICK!</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="검색" aria-label="Search">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">검색</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="main">
+            <form action="request_url" method="POST">
+                <div class="form-group">
+                    <label for="name" class = "head">보내는 사람</label>
+                    <input type="name" class="form-control" id="name" placeholder="이름을 입력해주세요.">
+                </div>
+                <div class="form-group">
+                    <label for="title" class = "head">제목</label>
+                    <input type="title" class="form-control" id="title" placeholder="제목을 입력해주세요.">
+                </div>
+                <div class="form-group">
+                    <label for="text" class = "head">내용</label>
+                    <textarea class="form-control" id="text" rows="5"></textarea>
+                </div>
+                <a href="./letter.html">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">전송</button>
+                </a>
+            </form>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Jua|Sunflower:300');
+    </style>
+    <script src='slideshow.js'></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:pink;">
+            <a style="color : white; padding-right: 10px; padding-left:10px; ">
+                <i class="far fa-grin-hearts fa-3x" alt="impticon"></i>
+            </a>
+            <a class="navbar-brand" href="#">♥ 건희를 ♥
+                <br> 소개합니다</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Info">개인정보</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Career">학력</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Photo">갤러리</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Prefer">건희의 PICK!</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="검색" aria-label="Search">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">검색</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="main">
+            <div class="Info">
+                <a id="Info"></a>
+                <h1 class="head">개인정보</h1>
+                <ul>
+                    <li>이름 : 박건희</li>
+                    <li>나이 : 21살</li>
+                    <li>생일 : 7월 31일</li>
+                    <li>국적 : 대한민국</li>
+                    <li>출생지 : 서울특별시 양천구 목동</li>
+                    <li>거주지 : 서울특별시 서초구 양재동</li>
+                    <li>가족 : 부모님, 오빠</li>
+                    <li>종교 : 무교</li>
+                    <li>취미 : 잠자기, 영화보기</li>
+                    <li>혈액형 : A형</li>
+                    <li>별자리 : 사자자리</li>
+                </ul>
+                <div id="map-canvas" style="width:100%; height:400px"></div>
+                <script type="text/javascript">
+                    function initialize() {
+                        var mapLocation = new google.maps.LatLng('37.471258', '127.041134');
+                        var markLocation = new google.maps.LatLng('37.471258', '127.041134');
+            
+                        var mapOptions = {
+                            center: mapLocation,
+                            zoom: 18,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                        var map = new google.maps.Map(document.getElementById("map-canvas"),
+                            mapOptions);
+            
+                        var size_x = 60;
+                        var size_y = 60;
+            
+                        var image = new google.maps.MarkerImage('http://www.larva.re.kr/home/img/boximage3.png',
+                            new google.maps.Size(size_x, size_y),
+                            '',
+                            '',
+                            new google.maps.Size(size_x, size_y));
+            
+                        var marker;
+                        marker = new google.maps.Marker({
+                            position: markLocation,
+                            map: map,
+                            icon: image,
+                            title: '양재동주민센터'
+                        });
+            
+                        var content = "양재동에 놀러오세요!";
+            
+                        var infowindow = new google.maps.InfoWindow({ content: content });
+            
+                        google.maps.event.addListener(marker, "click", function () {
+                            infowindow.open(map, marker);
+                        });
+                    }
+                    google.maps.event.addDomListener(window, 'load', initialize);</script>
+            </div>
+            <div class="Career">
+                <a id="Career"></a>
+                <h1 class="head">학력</h1>
+                <ol>
+                    <li>
+                        <a href="http://www.poi.es.kr/">포이초등학교</a> 졸업</li>
+                    <li>
+                        <a href="http://www.eonnam.ms.kr/">언남중학교</a> 졸업</li>
+                    <li>
+                        <a href="http://www.eonnam.hs.kr/">언남고등학교</a> 졸업</li>
+                    <li>
+                        <a href="http://www.mju.ac.kr/">명지대학교</a> 재학</li>
+                </ol>
+            </div>
+            <div class="Photo">
+                <a id="Photo"></a>
+                <h1 class="head">갤러리</h1>
+                <div class="slideshow">
+                    <img src="img/001.jpg" class="active">
+                    <img src="img/002.jpg">
+                    <img src="img/003.jpg">
+                    <img src="img/004.jpg">
+                    <img src="img/005.jpg">
+                </div>
+                <div class="indicator">
+                    <ul>
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                <script src="slideshow.js"></script>
+            </div>
+            <div class="Prefer">
+                <a id="Prefer"></a>
+                <h1 class="head">건희의 PICK!</h1>
+                <ul>
+                    <li>좋아하는 색 : 파스텔톤</li>
+                    <li>좋아하는 스포츠 :
+                        <a href="./volleyball.html">배구</a>
+                    </li>
+                    <li>좋아하는 영화 : 타이타닉, 해리포터, 디즈니 영화</li>
+                    <li>좋아하는 가수 : 10cm, 트와이스</li>
+                    <li>좋아하는 TV프로그램 : 슈퍼맨이 돌아왔다, 신서유기, 아는형님, 뷰티 인사이드</li>
+                    <li>좋아하는 음식 : 고기</li>
+                    <li>좋아하는 과일 : 포도, 망고, 망고스틴, 복숭아</li>
+                </ul>
+            </div>
+            <a href="./letter.html">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" height : 80px;>♥건희에게 편지쓰기♥</button>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
